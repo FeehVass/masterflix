@@ -1,0 +1,132 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+    overflow: scroll;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    background-color: rgb(250, 66, 66);
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.menu-hamburguer{
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    right: 10px;
+}
+
+.traco{
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    border-radius: 10px;
+    margin: 3px 0;
+}
+
+.traco-1, .traco-2, .traco-3{
+    transition: 0.5s;
+}
+
+.traco-1, .traco-3{
+    transform-origin: center right;
+}
+
+.menu-hamburguer.ativo .traco-1{
+    transform: rotateZ(-37deg);
+}
+
+.menu-hamburguer.ativo .traco-2{
+    opacity: 0;
+}
+
+.menu-hamburguer.ativo .traco-3{
+    transform: rotateZ(39deg);
+}
+
+.filtros{
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.filtros-mobile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    right: 0;
+    background-color: rgb(250, 66, 66);
+    z-index: 1;
+    transform: translateX(100%);
+    transition: 0.5s;
+}
+
+.filtros.mobile.ativo{
+    transform: translateX(0);
+}
+
+.filtros p{
+    margin: 10px;
+}
+
+.banner{
+    height: 30vw;
+    background-image: url(../imagens/banner.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 220px;
+}
+
+main{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.cartao{
+    margin-top: 15px;
+    width: 30%;
+    height: 350px;
+    border: 0.5px solid lightgray;
+    border-radius: 10px;
+    box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.1);
+    margin: 2% 0 20% 2%;
+}
+
+.cartao img{
+    width: 100%;
+}
+
+@media(min-width: 576px){
+    header{
+        justify-content: space-between;
+    }
+
+    .menu-hamburguer{
+        display: none;
+    }
+
+    .filtros{
+        display: flex;
+    }
+
+    .filtro.mobile{
+        display: none;
+    }
+}
